@@ -1,37 +1,23 @@
-# sql-fundamentos-ds
+# SQL y fundamentos para Data Science
 
-# SQL - Exploración inicial de ventas_tecnologia
+Prácticas del curso de Machine Learning (Data Scientist 2), organizadas por carpeta.
+Cada carpeta tiene el código y se puede ejecutar de forma independiente.
 
-Práctica del Módulo 0.2 del curso de Machine Learning (Data Scientist 2).
+| Carpeta | Tema | Qué se practica |
+|---|---|---|
+| `practica-sql-ventas/` | Módulo 0.2: sintaxis SQL fundamental | Consultas `SELECT`, `WHERE`, `GROUP BY` y `ORDER BY` sobre ventas de tecnología, ejecutadas con SQLite y Python |
+| `practica-dml-features/` | Módulo 1.3: DML aplicado a análisis de datos | Pipeline con `INSERT`, `UPDATE`, `DELETE`, índices y `pandas`/`SQLAlchemy` sobre una tabla de features para ML |
+| `practica-dml-vendedores/` | Módulo 2.7: DML | `SELECT`, `INSERT`, `UPDATE` y `DELETE` con `WHERE` sobre la tabla `vendedores` |
+| `practica-tcl-transacciones/` | Módulo 2.8: TCL y ACID | `BEGIN`, `COMMIT` y `ROLLBACK` para proteger la integridad de los datos |
 
-## Objetivo
+## Requisitos
 
-Practicar la extracción y manipulación de datos en una sola tabla
-(`ventas_tecnologia`), simulando la exploración inicial que hace un Data
-Scientist antes de modelar: selección, filtrado, detección de nulos y
-agregación con `GROUP BY` / `HAVING`.
-
-## Contenido
-
-`ejercicio_sql.py` usa `sqlite3` para crear una tabla en memoria con datos de
-ejemplo (incluye casos pensados a propósito: ventas en Colombia con
-`precio_unitario` > 500, registros con `categoria` en `NULL`, y categorías con
-ingresos por encima y por debajo de $10.000) y resuelve las 5 consultas de la
-consigna, cada una precedida por un comentario con la pregunta de negocio que
-responde:
-
-1. **Selección simple**: producto y precio, ordenados alfabéticamente.
-2. **Filtrado crítico**: ventas en Colombia con `precio_unitario > 500`.
-3. **Búsqueda de nulos**: registros con `categoria IS NULL`.
-4. **Agregación**: ingresos totales (`cantidad * precio_unitario`) por
-   categoría, con alias `ingresos_totales`.
-5. **HAVING**: categorías cuyos ingresos totales superan los $10.000.
-
-Todas las palabras clave de SQL están en mayúsculas siguiendo las buenas
-prácticas vistas en la unidad.
+- Python 3.10 o superior
+- Las prácticas usan `sqlite3` (incluido en Python); `practica-dml-features` también usa
+  `pandas`, `numpy` y `sqlalchemy`
 
 ## Cómo ejecutar
 
-```bash
-python3 ejercicio_sql.py
-```
+Entrá a la carpeta de la práctica y seguí las instrucciones de su `README.md`
+(o ejecutá el `.py` correspondiente). Las bases `.db` se generan al correr los scripts
+y no se suben al repositorio.
